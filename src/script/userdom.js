@@ -4,7 +4,7 @@ const containerUser = document.querySelector('.container-user');
 document.addEventListener('DOMContentLoaded', async () => {
     
         try {
-            const response = await fetch('http://localhost:3000/usuarios');
+            const response = await fetch(`${API_URL}/usuarios`);
             const usuarios = await response.json();
             
             if (usuarios.length > 0) {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function deleteUser(id, divUser) {
     try {
-        fetch("http://localhost:3000/usuarios/" + id, {
+        fetch(`${API_URL}/usuarios/${id}`, {
             method: 'DELETE'
         }).then((response) => {
             if (response.ok) {

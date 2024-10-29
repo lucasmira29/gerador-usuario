@@ -22,7 +22,7 @@ button.addEventListener('click', async () => {
 
     try {
         
-        const response = await fetch('http://localhost:3000/gerar-usuarios', {
+        const response = await fetch(`${API_URL}/gerar-usuarios`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
