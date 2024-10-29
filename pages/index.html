@@ -4,38 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Gerador de Usuário</title>
-    <script src="script/main.js" defer></script>
+    <script src="../src/script/dom.js" defer></script>
 </head>
 
 <body>
     <main class="main">
-        <h1>Gerador de Usuários</h1>
-
+        <h1>
+            Gerador de Usuários
+            <span class="desc">By Lucas de Mira</span>
+        </h1>
+        
         <div class="container">
             <div class="div-image">
-                <img class="image-user" src="assets/user-icon.svg" alt="foto usuário">
+                <img class="image-user" src="../assets/user-icon.svg" alt="foto usuário">
                 <h2 class="name-text">O usuário aparecerá aqui</h2>
             </div>
 
             <span class="loader hidden"></span>
             <div class="user-data">
                 <p class="user-text">
-                    <img src="assets/user2-icon.svg" alt="icone usuario" width="32px" class="icons hidden">
+                    <img src="../assets/user2-icon.svg" alt="icone usuario" width="32px" class="icons hidden">
                     <span class="age-text"></span>
                 </p>
                 <p class="user-text">
-                    <img src="assets/date-icon.svg" alt="icone calendario" width='32px' class="icons hidden">
+                    <img src="../assets/date-icon.svg" alt="icone calendario" width='32px' class="icons hidden">
                     <span class="date-text"></span>
                 </p>
                 <p class="user-text">
-                    <img src="assets/email-icon.svg" alt="icone calendario" width='32px' class="icons hidden">
+                    <img src="../assets/email-icon.svg" alt="icone calendario" width='32px' class="icons hidden">
                     <span class="email-text"></span>
                 </p>
             </div>
 
             <button class="btn">Gerar usuário</button>
+            
+            <button class="btn button2">
+                <a href="../pages/users.html">
+                    Lista Usuários
+                </a>
+            </button>
         </div>
     </main>
 </body>

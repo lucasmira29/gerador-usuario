@@ -1,39 +1,37 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+import 'dotenv/config';
+import express from 'express';
+import db from './src/config/dbConnect.js';
+import cors from 'cors';
+import UsuarioController from './src/controllers/usuarioController.js';
+
+
+db.on("error", console.log.bind(console, "Erro de conexão"));
+db.once("open", () => {
+  console.log("Conexão com o banco feita com sucesso");
+});
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.use(cors());
-app.use(bodyParser.json());
-
-// Conectar ao MongoDB
-mongoose.connect('mongodb://localhost:27017/usuarios');
-
-const UserSchema = new mongoose.Schema({
-    name: String,
-    age: Number,
-    date: String,
-    email: String,
-    picture: String
-});
-
-const User = mongoose.model('User', UserSchema);
+app.use(express.json());
 
 // Rota para salvar o usuário
-app.post('/api/usuarios', async (req, res) => {
-    const { name, age, date, email, picture } = req.body;
+app.post('/gerar-usuarios', async (req, res) => {
     
     try {
-        const newUser = new User({ name, age, date, email, picture });
-        await newUser.save();
-        res.status(201).json({ message: "Usuário salvo com sucesso!" });
-    } catch (error) {
-        res.status(500).json({ message: "Erro ao salvar usuário", error });
+        const user = await UsuarioController.gerarUsuario();
+        await UsuarioController.enviarParaBanco(user);
+        
+        res.status(201).json({ user });
+    } catch (erro) {
+        console.error("Ocorreu um erro: ", erro);
     }
 });
+
+app.get('/usuarios', UsuarioController.listarUsuarios);
+
+app.delete('/usuarios/:id', UsuarioController.deletarUsuario);
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);

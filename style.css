@@ -7,9 +7,7 @@
     --cor-terciaria: #D90429;
 }
 
-
 body {
-    height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -29,11 +27,18 @@ body {
 }
 
 .main h1 {
+    
     color: #ffff;
     font-size: 3rem;
     padding-bottom: 10px;
     border-bottom: 3px solid var(--cor-terciaria);
 }
+
+h1 .desc {
+    font-size: 0.8rem;
+    color: var(--cor-terciaria);
+} 
+
 
 .container {
     position: relative;
@@ -138,6 +143,35 @@ body {
     transform: scale(1.1);
 }
 
+.button2 {
+    background-color: var(--cor-terciaria);
+    top: 120%;
+    width: 150px;
+    transition: transform 0.2s ease;
+}
+
+.button2 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-weight: 300;
+}
+
+
+.button2:hover {
+    transform: scale(1.1);
+}
+
+@media (max-height: 785px) {
+    .main {
+        padding-top: 30%;
+    }
+}
+
 
 @media (max-width: 576px) {
 
@@ -150,12 +184,34 @@ body {
     }
 
     .container {
-        width: 75vw;
+        min-width: 220px;
+    }
+
+    .div-image {
+        font-size: 0.8rem;
+    }
+
+    .user-data {
+        font-size: 0.9rem;
     }
 }
 
-@media (max-height: 785px) {
-    .main {
-        padding-top: 30%;
+
+@media (max-width: 470px) {
+    .main h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        width: 200px;
+    }
+    
+    .user-data {
+        font-size: 0.8rem;
+        width: 290px
+    }
+
+    h1 .desc {
+        font-size: 0.6rem;
     }
 }
