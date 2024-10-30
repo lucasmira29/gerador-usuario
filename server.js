@@ -16,6 +16,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'pages', 'index.html'));
+})
+
+
+
 // Rota para salvar o usuário
 app.post('/gerar-usuarios', async (req, res) => {
     
