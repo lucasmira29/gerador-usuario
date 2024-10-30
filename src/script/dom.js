@@ -1,3 +1,5 @@
+const API_URL = process.env.API_URL || 'http://localhost:3000';
+
 
 const divImage = document.querySelector('.div-image');
 const imageUser = document.querySelector('.image-user');

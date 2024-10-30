@@ -1,5 +1,9 @@
+const API_URL = process.env.API_URL || 'http://localhost:3000';
+
 const msg = document.querySelector('.msg');
 const containerUser = document.querySelector('.container-user');
+
+
 
 document.addEventListener('DOMContentLoaded', async () => {
     

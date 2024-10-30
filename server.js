@@ -13,11 +13,12 @@ db.once("open", () => {
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
 app.use(cors());
 app.use(express.json());
 
-// Servir arquivos estáticos (CSS, imagens, JS)
-app.use(express.static(path.join(process.cwd(), 'pages')));
+// Servir arquivos estáticos 
+app.use(express.static(path.join(process.cwd())));
 
 // Rota para entregar o index.html
 app.get("/", (req, res) => {
