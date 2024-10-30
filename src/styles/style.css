@@ -34,10 +34,7 @@ body {
     border-bottom: 3px solid var(--cor-terciaria);
 }
 
-h1 .desc {
-    font-size: 0.8rem;
-    color: var(--cor-terciaria);
-} 
+
 
 
 .container {
@@ -177,10 +174,11 @@ h1 .desc {
 
     .main {
         gap: 20px;
+        padding: 10%;
     }
 
     .main h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .container {
@@ -209,9 +207,5 @@ h1 .desc {
     .user-data {
         font-size: 0.8rem;
         width: 290px
-    }
-
-    h1 .desc {
-        font-size: 0.6rem;
     }
 }
