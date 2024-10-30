@@ -1,4 +1,4 @@
-const API_URL = process.env.API_URL || 'http://localhost:3000';
+const API_URL = "https://gerador-usuario.vercel.app";
 
 
 const divImage = document.querySelector('.div-image');
