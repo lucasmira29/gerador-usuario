@@ -1,28 +1,13 @@
-
 # Gerador de Usuários
 
 Este é um projeto que utiliza a API [Random User](https://randomuser.me/) para gerar usuários aleatórios e salvá-los em um banco de dados MongoDB. O projeto inclui uma interface web que permite visualizar, listar e deletar usuários, com o back-end hospedado na Vercel e o banco de dados no MongoDB Atlas.
 
 ## Índice
 
-- [Instalação](#instalação)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Funcionalidades](#funcionalidades)
-
-## Instalação
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/lucasmira29/gerador-usuario.git
-   cd gerador-usuario
-   ```
-
-2. Instale as dependências do projeto:
-   ```bash
-   npm install
-   ```
-
-
+- [Deploy](#deploy)
+- [Endpoints da API](#endpoints-da-api)
 
 ## Tecnologias Utilizadas
 
@@ -40,14 +25,7 @@ Este é um projeto que utiliza a API [Random User](https://randomuser.me/) para 
 
 ## Deploy
 
-Para hospedar na Vercel:
-
-1. Configure o MongoDB Atlas para permitir acesso global (IP `0.0.0.0/0`).
-2. Suba o projeto para um repositório Git e conecte-o à Vercel.
-3. Em **Settings > Environment Variables** na Vercel, configure `STRING_CONEXAO_BD` e `API_URL`.
-4. Faça o deploy.
-
-A URL gerada pela Vercel será o seu novo endpoint da API e deve ser configurada em `API_URL`.
+O projeto está hospedado na Vercel e pode ser acessado através do link: **[Acesse o Gerador de Usuários](https://gerador-usuario.vercel.app)**.
 
 ## Endpoints da API
 
