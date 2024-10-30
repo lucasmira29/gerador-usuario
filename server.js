@@ -11,23 +11,26 @@ db.once("open", () => {
 });
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 app.use(cors());
 app.use(express.json());
 
-// Servir arquivos estáticos 
-app.use(express.static(path.join(process.cwd())));
+app.use('/assets', express.static(path.join(process.cwd(), 'assets')));
+app.use('/src', express.static(path.join(process.cwd(), 'src')));
+app.use('/script', express.static(path.join(process.cwd(), 'script')));
+app.use('/styles', express.static(path.join(process.cwd(), 'src', 'styles')));
+
 
 // Rota para entregar o index.html
 app.get("/", (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'pages', 'index.html'));
+    res.sendFile(path.join(process.cwd(), 'src', 'pages', 'index.html'));
 });
 
 // Rota para entregar o users.html
 app.get("/users", (req, res) => {
-    res.sendFile(path.join(process.cwd(), 'pages', 'users.html'));
+    res.sendFile(path.join(process.cwd(), 'src', 'pages', 'users.html'));
 });
 
 // Rota para salvar o usuário
