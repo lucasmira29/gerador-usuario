@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import db from './src/config/dbConnect.js';
+import path from 'path';
 import cors from 'cors';
 import UsuarioController from './src/controllers/usuarioController.js';
 
@@ -17,7 +18,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'pages', 'index.html'));
+    res.sendFile(path.join(process.cwd(), 'pages', 'index.html'));
 })
 
 
